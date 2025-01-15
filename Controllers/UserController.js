@@ -5,7 +5,7 @@ const Task=require("../Schema/TaskSchema");
 //FOLDER SCHEMA
 const Folder=require("../Schema/FolderSchema");
 //BCRYPT JS 
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 //NODEMAILER
 const nodemailer = require("nodemailer");
 //UUID LIBRARY
