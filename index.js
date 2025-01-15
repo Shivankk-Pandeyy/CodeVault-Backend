@@ -1,5 +1,6 @@
 //EXPRESS SETUP
 const express=require("express");
+const serverless = require("serverless-http");
 const app=express();
 const path = require("path");
 //CORS SETUP
