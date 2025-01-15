@@ -15,7 +15,12 @@ connectDB();
 //MIDDLEWARE SETUP
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cors());
+// Enable CORS for the specific frontend origin
+const corsOptions = {
+    origin: 'https://code-vault-frontend.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Enable specific HTTP methods
+    credentials: true, // If you are using cookies or authorization headers
+  };
 //ROUTES SETUP
 // Serve the 'uploads' directory as a static route
 app.use("/upload", express.static(path.join(__dirname, "./Middleware/uploads")));
