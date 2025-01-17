@@ -16,7 +16,11 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 // Enable CORS for the specific frontend origin
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+}));
 //ROUTES SETUP
 // Serve the 'uploads' directory as a static route
 app.use("/upload", express.static(path.join(__dirname, "./Middleware/uploads")));
